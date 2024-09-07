@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+
+
+        const Person = ({name, age, avatar}) => {
+            return (
+                <div className = "Person">
+                    <img src={avatar} alt={name}/>
+                    <h1>{name}</h1>
+                    <p>Год выпуска:  {age}</p>
+                </div>
+            );
+        };
+
+        const people = [
+            {name: 'Лунтик, возвращение домой', age: 2024, id: 1, 
+            avatar:'https://avatars.mds.yandex.net/get-kinopoisk-image/9784475/01ac7d30-bf29-4df2-b0dc-3320cb5f7887/280x420'},
+
+            {name: 'John', age: 30, id: 2}];
+
+            const content = people.map((person, index) => {
+                return (
+                    <Person key={index} name={person.name} age={person.age} avatar={person.avatar}/>
+                )
+            })
+
+            ReactDOM.render(content, document.getElementById('app'));
+
+    </script>
+</body>
+
+</html>
