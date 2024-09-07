@@ -16,7 +16,6 @@
 
     <script type="text/babel">
 
-
         const Card = ({name, year, avatar}) => {
             return (
                 <div className = "Movie">
@@ -40,11 +39,9 @@
             },
         ];
 
-
-
-            const content = movies.map((card, index) => {
+            const content = movies.map((movies) => {
                 return (
-                    <Card key={index} name={card.name} age={card.year} avatar={card.avatar}/>
+                    <Card key={movies.id} name={movies.name} age={movies.year} avatar={movies.avatar}/>
                 )
             })
             ReactDOM.render(content, document.getElementById('app'));
