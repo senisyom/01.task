@@ -17,34 +17,36 @@
     <script type="text/babel">
 
 
-        const Person = ({name, age, avatar}) => {
+        const Card = ({name, year, avatar}) => {
             return (
-                <div className = "Person">
+                <div className = "Movie">
                     <img src={avatar} alt={name}/>
                     <h1>{name}</h1>
-                    <p>Год выпуска: {age}</p>
+                    <p>Год выпуска: {year}</p>
                 </div>
             );
         };
 
-        const people = [
-            {name: 'Лунтик, возвращение домой', age: 2024, id: 1, 
+        const movies = [
+            {name: 'Лунтик, возвращение домой', year: 2024, id: 1, 
             avatar:'https://avatars.mds.yandex.net/get-kinopoisk-image/9784475/01ac7d30-bf29-4df2-b0dc-3320cb5f7887/280x420'},
 
-            {name: 'Обе две', age: 2024, id: 2, avatar:
+            {name: 'Обе две', year: 2024, id: 2, avatar:
             'https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/e2ee617b-5dbd-4b84-b028-fb5db82e2789/600x900',
             },
-        
+
+            {name: 'Ворон', year: 2024, id: 3, avatar:
+            'https://avatars.mds.yandex.net/get-kinopoisk-image/10592371/689fb85e-1590-4c7c-8426-674b7e64400a/600x900',
+            },
         ];
 
 
 
-            const content = people.map((person, index) => {
+            const content = movies.map((card, index) => {
                 return (
-                    <Person key={index} name={person.name} age={person.age} avatar={person.avatar}/>
+                    <Card key={index} name={card.name} age={card.year} avatar={card.avatar}/>
                 )
             })
-
             ReactDOM.render(content, document.getElementById('app'));
 
     </script>
